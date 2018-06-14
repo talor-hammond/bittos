@@ -24,12 +24,16 @@ function createNewUser(newUser, testConn){
 
   return db('users')
     .insert(newUser)
+    .then(ids => {
+      return ids[0]
+    })
 }
 
 function getGallery(testConn) {
   const db = testConn || conn
 
   return db('images')
+    .orderBy('created_at', 'asc')
 }
 
 function getImage(id, testConn) {
