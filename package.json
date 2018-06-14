@@ -1,0 +1,19 @@
+{
+  "name": "bittos",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/talor-hammond/bittos",
+  "author": "talor-hammond <talorjhammond@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon index",
+    "start": "node index"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "knex": "^0.14.6",
+    "nodemon": "^1.17.5",
+    "sqlite3": "^4.0.0"
+  }
+}
