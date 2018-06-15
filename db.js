@@ -1,7 +1,6 @@
-const knex = require('knex')
-const config = require('./knexfile').development
-
-const conn = knex(config)
+var environment = process.env.NODE_ENV || 'development'
+var config = require('./knexfile')[environment]
+var conn = require('knex')(config)
 
 function grabUser(id, testConn) {
   const db = testConn || conn
