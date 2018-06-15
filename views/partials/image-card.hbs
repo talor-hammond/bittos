@@ -9,15 +9,15 @@
             <!-- LEFT-SIDE OF MEDIA HEADER -->
             <div class="media-left">
               <figure class="image is-48x48">
-                <img src="">
+                <a href="/profile/{{artist_id}}"><img src="{{avatar_url}}"></a>
                 <!-- USER AVATAR -->
               </figure>
             </div>
             <!-- RIGHT-SIDE OF MEDIA HEADER -->
             <div class="media-content mediaMargin">
-              <p class="title is-4">{{title}}</p>
+              <a href="/profile/{{artist_id}}"><p class="title is-4">{{title}}</p></a>
               <!-- NAME -->
-              <p class="subtitle is-6">Username</p>
+              <a href="/profile/{{artist_id}}"><p class="subtitle is-6">{{username}}</p></a>
               <!-- USERNAME -->
             </div>
           </div>
@@ -27,7 +27,7 @@
         <!-- IMAGE -->
         <div class="card-image">
           <figure class="image is-4by3">
-            <img src="{{url}}">
+            <a href="/image/{{image_id}}"><img src="{{url}}"></a>
             <!-- IMAGE SOURCE -->
           </figure>
         </div>
