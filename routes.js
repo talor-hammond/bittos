@@ -36,8 +36,10 @@ router.get('/image/:id', (req, res) => {
     db.getCommentsOfImage(id)
   ])
   .then(([image, comments]) => {
+    console.log({image, comments})
     res.render('image', {image, comments})
   })
+
 })
 
 router.post('/image/:id', (req, res) => {

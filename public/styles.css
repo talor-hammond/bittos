@@ -6,3 +6,43 @@
 .logo {
     font-size: 25px;
 }
+
+.topMargin {
+    margin-top: 70px;
+}
+
+.bottomMargin {
+    margin-bottom: 100px;
+}
+
+.mediaMargin {
+    margin-top: 12px;
+    margin-bottom: 15px;
+}
+
+.comment-box {
+    background-color: rgba(107, 107, 107, 0.1);
+}
+
+.border {
+    border: 1px solid black;
+}
+
+.leftBorder {
+    border-left: 1px solid rgba(0,0,0,.1);
+}
+
+.rightBorder {
+    border-right: 1px solid rgba(0,0,0,.1);
+}
+
+/* HOVER */
+a.menu {
+    transition: .12s ease-in-out all;
+}
+
+a.menu:hover {
+    background-color: #888;
+    border-radius: 10%;
+}
+
