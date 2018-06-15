@@ -17,48 +17,48 @@
 
 <body>
 
-<!-- HEADER -->
-    <!-- NAVBAR -->
-    <nav class="navbar is-dark is-fixed-top has-shadow">
-        <div class="container">
-            <!-- BRAND / LOGO -->
-            <div class="navbar-brand">
-                <a class="navbar-item logo" href="./newsfeed.html">
-                    <h1>bittos</h1>
-                </a>
-            </div>
+  <!-- HEADER -->
+  <!-- NAVBAR -->
+  <nav class="navbar is-dark is-fixed-top has-shadow">
+    <div class="container">
+      <!-- BRAND / LOGO -->
+      <div class="navbar-brand">
+        <a class="navbar-item logo" href="/browse">
+          <h1>bittos</h1>
+        </a>
+      </div>
 
-            <!-- MENU ITEMS -->
-            <div class="navbar-menu">
-                <div class="navbar-end">
+      <!-- MENU ITEMS -->
+      <div class="navbar-menu">
+        <div class="navbar-end">
 
-                    <div class="navbar-item">
+          <div class="navbar-item">
 
-                        <a class="navbar-item has-text-white" href="./newsfeed.html">
-                            Browse
-                        </a>
-                        <a class="navbar-item has-text-white">
-                            Profile
-                        </a>
-                        
-                        <a class="navbar-item has-text-white is-primary" href="./create.html">
-                            Post
-                        </a>
-                        <a class="navbar-item button is-primary" href="./signup.html">
-                            Sign-up
-                        </a>
+            <a class="navbar-item has-text-white menu" href="/browse">
+              Browse
+            </a>
+            <a class="navbar-item has-text-white menu" href="/profile/1">
+              Profile
+            </a>
 
-                    </div>
+            <a class="navbar-item has-text-white is-primary menu" href="/post">
+              Post
+            </a>
+            <a class="navbar-item button is-primary" href="/">
+              Sign-up
+            </a>
 
-                </div>
-            </div>
+          </div>
+
         </div>
-    </nav>
+      </div>
+    </div>
+  </nav>
 
   <div class="container">
-    <div class="columns">
+    <div class="columns topMargin">
 
-      <div class="column is-12 is-centered">
+      <div class="column is-6 is-offset-3 is-centered">
 
         <!-- FOR EACH -->
         <!-- IMAGE GALLERY -->
@@ -79,31 +79,36 @@
 
           <hr>
 
-          <!-- COMMENTS SECTION -->
-          <div class="box menu">
-            <!-- FOR EACH -->
-            <ul>
-              <li>This a comment; username.id</li>
-            </ul>
+          <!-- FOR EACH -->
+          <ul>
+            <li>This a comment; username.id</li>
+          </ul>
 
-            <hr>
+          <br>
+
+          <!-- COMMENTS SECTION -->
+          <div class="box comment-box menu">
 
             <!-- POST A COMMENT BUTTON -->
-            <p class="subtitle">Post a comment</p>
+            <p class="subtitle"><em>Post a comment</em></p>
 
             <form action="" method="post">
 
               <div class="field">
 
                 <div class="control">
-                  <input name="comment" class="input is-medium">
+                  <input name="comment" class="input is-medium" placeholder="Comment here">
+                </div>
+                
+                <div class="control">
+                  <input name="user_id" class="input is-medium" placeholder="User ID">
                 </div>
                 <br>
                 <div class="control">
-                  <input type="submit" class="button is-danger" value="Post">
+                  <input type="submit" class="button is-info" value="Post">
                 </div>
 
-              </form>
+            </form>
 
             </div>
 
