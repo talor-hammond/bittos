@@ -15,7 +15,7 @@ function grabPhotosOfUser(id, testConn){
 
   return db('images')
     .where({artist_id: id})
-    .orderBy('created_at', 'asc')
+    .orderBy('created_at', 'desc')
 }
 
 function createNewUser(newUser, testConn){
@@ -43,7 +43,7 @@ function getGallery(testConn) {
       'username',
       'avatar_url',
     )
-    .orderBy('created_at', 'asc')
+    .orderBy('created_at', 'desc')
 }
 
 function getImage(id, testConn) {
