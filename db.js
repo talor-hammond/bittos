@@ -33,6 +33,17 @@ function getGallery(testConn) {
   const db = testConn || conn
 
   return db('images')
+    .join('users', 'images.artist_id', 'users.id')
+    .select(
+      'title',
+      'description',
+      'url',
+      'artist_id',
+      'images.id as image_id',
+      'created_at',
+      'username',
+      'avatar_url',
+    )
     .orderBy('created_at', 'asc')
 }
 
@@ -40,7 +51,19 @@ function getImage(id, testConn) {
   const db = testConn || conn
 
   return db('images')
-    .where({id})
+    .join('users', 'images.artist_id', 'users.id')
+    .select(
+      'title',
+      'description',
+      'url',
+      'artist_id',
+      'images.id as image_id',
+      'created_at',
+      'username',
+      'name',
+      'avatar_url',
+    )
+    .where('images.id', id)
     .first()
 }
 
@@ -51,16 +74,42 @@ function addNewImage(image, testConn) {
     .insert(image)
 }
 
+function newComment(newComment, testConn) {
+  const db = testConn || conn
+
+  return db('comments')
+  .insert(newComment)
+}
+
+function getCommentsOfImage(id, testConn) {
+  const db = testConn || conn
+
+  return db('comments')
+  .join('users', 'users.id', 'author_id' )
+  .select(
+    'comment',
+    'author_id',
+    'name',
+    'username',
+    'written_at',
+    'avatar_url'
+  )
+  .where('image_id', id)
+  .orderBy('written_at', 'asc')
+}
+
 module.exports = {
     grabUser,
     grabPhotosOfUser,
     createNewUser,
     getGallery,
     getImage,
-    addNewImage
+    addNewImage,
+    newComment,
+    getCommentsOfImage
 }
 
 // testing calls
-// getImage(1).then(res => {
-//   console.log(res);
-// })
+getCommentsOfImage(2).then(res => {
+  console.log(res);
+})
