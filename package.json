@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "nodemon index",
     "start": "node index",
+    "postinstall": "knex migrate:latest",
     "db_init": "knex migrate:latest && knex seed:run"
   },
   "dependencies": {
