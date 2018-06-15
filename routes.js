@@ -20,7 +20,8 @@ router.get('/profile/:id', (req, res) => {
 
 // view gallery
 router.get('/browse', (req, res) => {
-  db.getGallery().then(images => {
+  db.getGallery()
+  .then(images => {
     console.log({images})
     res.render('newsfeed', {images})
   })
@@ -31,7 +32,7 @@ router.get('/image/:id', (req, res) => {
   let id = req.params.id
 
   Promise.all([
-    db.getImage(id)
+    db.getImage(id),
     db.getCommentsOfImage(id)
   ])
   .then(([image, comments]) => {
