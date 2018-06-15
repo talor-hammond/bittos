@@ -1,10 +1,12 @@
 let express = require('express')
 let server = express()
+let router = require('./routes')
+const hbs = require('express-handlebars')
 
-server.get('/', (req, res) => {
+server.engine('hbs', hbs({extname: 'hbs'}))
+server.set('view engine', 'hbs')
+server.use(express.urlencoded({extended: true}))
 
-    res.send('Yeah')
-
-})
+server.use('/', router)
 
 module.exports = server
