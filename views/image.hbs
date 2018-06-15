@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{{title}}</title>
+  <!-- HBS -->
+
+  <!-- STYLES -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+    <!-- NAVBAR -->
+    <nav class="navbar is-dark is-fixed-top has-shadow">
+        <div class="container">
+            <!-- BRAND / LOGO -->
+            <div class="navbar-brand">
+                <a class="navbar-item logo" href="./newsfeed.html">
+                    <h1>bittos</h1>
+                </a>
+            </div>
+
+            <!-- MENU ITEMS -->
+            <div class="navbar-menu">
+                <div class="navbar-end">
+
+                    <div class="navbar-item">
+
+                        <a class="navbar-item has-text-white" href="./newsfeed.html">
+                            Browse
+                        </a>
+                        <a class="navbar-item has-text-white">
+                            Profile
+                        </a>
+                        
+                        <a class="navbar-item has-text-white is-primary" href="./create.html">
+                            Post
+                        </a>
+                        <a class="navbar-item button is-primary" href="./signup.html">
+                            Sign-up
+                        </a>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+
+  <div class="container">
+    <div class="columns">
+
+      <div class="column is-12 is-centered">
+
+        <!-- FOR EACH -->
+        <!-- IMAGE GALLERY -->
+        <div class="box menu">
+          <!-- TITLE -->
+          <h1 class="title">{{title}}</h1>
+          <figure class="image is-4by3">
+            <!-- IMAGE SOURCE -->
+            <img src="{{url}}">
+          </figure>
+          <hr>
+          <!-- DESCRIPTION -->
+          <h2 class="subtitle">{{description}}</h2>
+          <!-- USERNAME WITH LINK -->
+          <h2 class="subtitle">
+            <em>username</em>
+          </h2>
+
+          <hr>
+
+          <!-- COMMENTS SECTION -->
+          <div class="box menu">
+            <!-- FOR EACH -->
+            <ul>
+              <li>This a comment; username.id</li>
+            </ul>
+
+            <hr>
+
+            <!-- POST A COMMENT BUTTON -->
+            <p class="subtitle">Post a comment</p>
+
+            <form action="" method="post">
+
+              <div class="field">
+
+                <div class="control">
+                  <input name="comment" class="input is-medium">
+                </div>
+                <br>
+                <div class="control">
+                  <input type="submit" class="button is-danger" value="Post">
+                </div>
+
+              </form>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+
+</html>

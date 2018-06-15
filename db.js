@@ -44,12 +44,20 @@ function getImage(id, testConn) {
     .first()
 }
 
+function addNewImage(image, testConn) {
+  const db = testConn || conn
+
+  return db('images')
+    .insert(image)
+}
+
 module.exports = {
     grabUser,
     grabPhotosOfUser,
     createNewUser,
     getGallery,
-    getImage
+    getImage,
+    addNewImage
 }
 
 // testing calls

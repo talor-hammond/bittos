@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{user.username}}</title>
+    <!-- USERNAME -->
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar is-dark is-fixed-top has-shadow">
+        <div class="container">
+            <!-- BRAND / LOGO -->
+            <div class="navbar-brand">
+                <a class="navbar-item logo" href="./newsfeed.html">
+                    <h1>bittos</h1>
+                </a>
+            </div>
+
+            <!-- MENU ITEMS -->
+            <div class="navbar-menu">
+                <div class="navbar-end">
+
+                    <div class="navbar-item">
+
+                        <a class="navbar-item has-text-white" href="./newsfeed.html">
+                            Browse
+                        </a>
+                        <a class="navbar-item has-text-white" href="./profile.html">
+                            Profile
+                        </a>
+
+                        <a class="navbar-item has-text-white is-primary" href="./create.html">
+                            Post
+                        </a>
+                        <a class="navbar-item button is-primary" href="./signup.html">
+                            Sign-up
+                        </a>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PROFILE CONTENT -->
+    <div class="container">
+        <div class="columns">
+
+            <!-- LEFT COLUMN -->
+            <div class="column is-4">
+                <!-- AVATAR -->
+                <figure class="image is-circle">
+                    <img src="{{user.avatar_url}}">
+                </figure>
+                <br>
+                <!-- USERNAME -->
+                <h1 class="title">{{user.username}}</h1>
+                <!-- NAME -->
+                <h2 class="subtitle">{{user.name}}</h2>
+                <hr>
+                <!-- BIO -->
+                <p class="subtitle">
+                    {{user.bio}}
+                </p>
+            </div>
+
+            <!-- RIGHT COLUMN -->
+            <div class="column is-8 is-centered">
+
+                <!-- FOR EACH -->
+                <h1 class="title">Gallery</h1>
+                <hr>
+
+                {{#each artworks}}
+                <!-- IMAGE GALLERY -->
+                <div class="box menu">
+                    <!-- TITLE -->
+                    <h1 class="title">{{title}}</h1>
+                    <figure class="image is-4by3">
+                        <!-- IMAGE SOURCE -->
+                        <img src="{{url}}">
+                    </figure>
+                    <hr>
+                    <!-- SUBTITLE -->
+                    <h2 class="subtitle">{{description}}</h2>
+                </div>
+
+                <p><em>{{created_at}}</em></p>
+
+                <hr>
+                {{/each}}
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>

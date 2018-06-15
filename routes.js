@@ -3,8 +3,7 @@ const db = require('./db')
 const router = express.Router()
 
 router.get('/', (req, res) => {
-  //DO THIS NOW!!!!!!!!
-  res.render('signupview')
+  res.render('signup')
 })
 
 router.get('/profile/:id', (req, res) => {
@@ -15,29 +14,31 @@ router.get('/profile/:id', (req, res) => {
     db.grabPhotosOfUser(id)
   ])
   .then(([user, artworks]) => {
-    let  = arrOfResults
-        //DO THE OTHER THING!!!!!!!
-    res.render('profileView', {user, artworks})
+    res.render('profile', {user, artworks})
   })
 })
 
 // view gallery
-router.get('/newsfeed', (req, res) => {
+router.get('/browse', (req, res) => {
   db.getGallery().then(images => {
-    res.render('gallery', {images})
+    console.log({images})
+    res.render('newsfeed', {images})
   })
 })
 
 // view single image
-router.get('imagepage/:id', (req, res) => {
+router.get('/image/:id', (req, res) => {
+  let id = req.params.id
+
   db.getImage(id)
     .then(image => {
-      res.render('view', image)
+      console.log(image)
+      res.render('image', image)
     })
 })
 
 //create New User form
-router.post('/PLACE', (req, res) => {
+router.post('/create-user', (req, res) => {
   let newUser = {
     name: req.body.name,
     username: req.body.userName,
@@ -47,12 +48,19 @@ router.post('/PLACE', (req, res) => {
   }
 
   db.createNewUser(newUser).then(id => {
+    console.log('Redirecting...')
     res.redirect(`/profile/${id}`)
   })
 })
 
+router.get('/post', (req, res) => {
+
+  res.render('create')
+
+})
+
 //Add new image form
-router.post('/OTHERPLACE', (req, res) => {
+router.post('/post-image', (req, res) => {
   let newImage = {
     title: req.body.title,
     description: req.body.description,
