@@ -22,9 +22,10 @@ function createNewUser(newUser, testConn){
   const db = testConn || conn
 
   return db('users')
-    .insert(newUser)
+    .insert(newUser, 'id')
     .then(ids => {
-      return ids[0]
+      if (ids[0]) return ids[0]
+      else return ids
     })
 }
 
@@ -70,7 +71,11 @@ function addNewImage(image, testConn) {
   const db = testConn || conn
 
   return db('images')
-    .insert(image)
+    .insert(image, 'id')
+    .then(ids => {
+      if (ids[0]) return ids[0]
+      else return ids
+    })
 }
 
 function newComment(newComment, testConn) {
