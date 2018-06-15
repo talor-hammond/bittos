@@ -30,13 +30,28 @@ router.get('/browse', (req, res) => {
 router.get('/image/:id', (req, res) => {
   let id = req.params.id
 
-  db.getImage(id)
-    .then(image => {
-      console.log(image)
-      res.render('image', image)
-    })
+  Promise.all([
+    db.getImage(id), 
+    db.getCommentsOfImage(id)
+  ])
+  .then(([image, comments]) => {
+    console.log({image, comments})
+    res.render('image', {image, comments})
+  })
+
 })
 
+router.post('/image/:id', (req, res) => {
+  let newComment = {
+    comment: req.body.comment,
+    author_id: req.body.user_id,
+    image_id: req.params.id
+  }
+  db.newComment(newComment)
+  .then(() => {
+    res.redirect(`/image/${req.params.id}`)
+  })
+})
 //create New User form
 router.post('/create-user', (req, res) => {
   let newUser = {

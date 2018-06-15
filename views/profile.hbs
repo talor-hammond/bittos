@@ -22,7 +22,7 @@
         <div class="container">
             <!-- BRAND / LOGO -->
             <div class="navbar-brand">
-                <a class="navbar-item logo" href="./newsfeed.html">
+                <a class="navbar-item logo" href="/browse">
                     <h1>bittos</h1>
                 </a>
             </div>
@@ -33,17 +33,17 @@
 
                     <div class="navbar-item">
 
-                        <a class="navbar-item has-text-white" href="./newsfeed.html">
+                        <a class="navbar-item has-text-white menu" href="/browse">
                             Browse
                         </a>
-                        <a class="navbar-item has-text-white" href="./profile.html">
+                        <a class="navbar-item has-text-white menu" href="/profile/1">
                             Profile
                         </a>
 
-                        <a class="navbar-item has-text-white is-primary" href="./create.html">
+                        <a class="navbar-item has-text-white is-primary menu" href="/post">
                             Post
                         </a>
-                        <a class="navbar-item button is-primary" href="./signup.html">
+                        <a class="navbar-item button is-primary" href="/">
                             Sign-up
                         </a>
 
@@ -56,10 +56,10 @@
 
     <!-- PROFILE CONTENT -->
     <div class="container">
-        <div class="columns">
+        <div class="columns topMargin bottomMargin">
 
             <!-- LEFT COLUMN -->
-            <div class="column is-4">
+            <div class="column is-3 is-offset-1 leftBorder">
                 <!-- AVATAR -->
                 <figure class="image is-circle">
                     <img src="{{user.avatar_url}}">
@@ -76,8 +76,9 @@
                 </p>
             </div>
 
+
             <!-- RIGHT COLUMN -->
-            <div class="column is-8 is-centered">
+            <div class="column is-7 rightBorder">
 
                 <!-- FOR EACH -->
                 <h1 class="title">Gallery</h1>
@@ -90,7 +91,7 @@
                     <h1 class="title">{{title}}</h1>
                     <figure class="image is-4by3">
                         <!-- IMAGE SOURCE -->
-                        <img src="{{url}}">
+                       <a href="/image/{{id}}"><img src="{{url}}"></a> 
                     </figure>
                     <hr>
                     <!-- SUBTITLE -->
